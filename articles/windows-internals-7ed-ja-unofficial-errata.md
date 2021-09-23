@@ -3,7 +3,7 @@ title: "【非公式】インサイドWindows第7版 私的正誤表"
 emoji: "😎"
 type: "idea"
 topics: ["windows"]
-published: false
+published: true
 ---
 
 # はじめに
