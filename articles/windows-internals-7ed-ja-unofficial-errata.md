@@ -8,7 +8,7 @@ published: true
 
 # はじめに
 
-まずはじめに、インサイドWindows第7版の邦訳に携わったすべての方に謝意を表します。このような需要の限られた専門書の訳書を発行していただけるのは、それだけで大変にありがたいことです。
+まずはじめに、[インサイドWindows第7版](https://www.nikkeibp.co.jp/atclpubmkt/book/18/P53570/)の邦訳に携わったすべての方に謝意を表します。このような需要の限られた専門書の訳書を発行していただけるのは、それだけで大変にありがたいことです。
 
 本文書は、この分野に貢献するために作成されたものです。誰か・何かを攻撃する意図は全くありません。
 
@@ -23,6 +23,10 @@ published: true
 行位置は、見出しと囲い中の文書を含み、図・キャプションとコード片を含まない、おおよその位置です。
 
 opaque は訳していません。
+
+# リンク
+
+- [英語本家正誤表](https://www.microsoftpressstore.com/store/windows-internals-part-1-system-architecture-processes-9780735684188#5ee7e6a0-2896-4293-85db-a976142bac52)
 
 # 私的正誤表
 
@@ -386,3 +390,58 @@ opaque は訳していません。
 
 - (誤) コンテキストエリアに含める
 - (正) コンテキストエリアを含める
+
+### p.678 l.3
+
+- (誤) B1評価レベルの1つ
+- (正) B評価レベルの1つ
+
+### p.678 l.8
+
+- (誤) 一意が一意に
+- (正) 一意に
+
+### p.678 l.13
+
+- (誤) 様々な種類のアクセスを許可する権利を与えます
+- (正) 様々な種類のアクセスを行う権利を与えます (grants rights that permit various kinds of access)
+
+### p.692 l.34
+
+- (誤) 単一のユーザーモードイメージのみを読み込み可能
+- (正) 署名されたユーザーモードイメージのみを読み込み可能
+
+### p.790 l.20
+
+- (誤) それ以外の方法でUWPプロセスにハンドルを複製することを阻むものは何もありません
+- (正) デスクトップアプリがUWPプロセスにハンドルを複製することを阻むものは何もないからです(阻まれるのは逆だけです)。
+
+### p.791 l.10
+
+- (誤) アプリケーション自身が開始されることによって作成されます
+- (正) アプリコンテナーを起動するアプリケーション(the launch application)自身によって作成されます
+
+### p.791 l.18
+
+- (誤) もともと開始されたアプリケーションが終了し
+- (正) アプリコンテナーを起動したアプリケーション(the launching application)が終了し
+
+### p.799 l.20
+
+- (誤) Windowsを表示できるようにします
+- (正) ウィンドウを表示できるようにします
+
+### p.826 l.22 (表7-20内)
+
+- (誤) これは、スタックベースの……VirtualAllocを呼び出します。
+- (正) これは、VirtualAllocの呼び出しに8ビットエントロピによるASLRが適用されるようにします（スタックの始点のランダム化を含む）。
+
+訳注: VirtualAllocが使うアドレス空間の範囲をずらすということ:
+
+- [PROC_THREAD_ATTRIBUTE_MITIGATION_POLICY](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute)
+- https://msrc-blog.microsoft.com/2013/12/11/software-defense-mitigating-common-exploitation-techniques/
+
+### p.833 l.23 (最終行)
+
+- (誤) テーブル内の関数の一つをターゲットとしたCALLまたはJMP命令を単純に比較するだけです。
+- (正) CALLまたはJMP命令のターゲットとテーブル内の関数の一つとを比較するだけです。
